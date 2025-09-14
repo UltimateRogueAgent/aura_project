@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "name": "Python Documentation Sync",
+  "description": "Monitors Python source files and configuration files for changes. When modifications are detected, automatically updates documentation in README.md or /docs folder, verifies code correctness against library documentation, and runs ruff formatter and linter to ensure code quality standards.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "*.py",
+      "requirements.txt",
+      "config/*.yaml",
+      "main.py"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Python source files have been modified. Please:\n\n1. Review the changed Python files and update the documentation in either README.md or the /docs folder to reflect any new functionality, API changes, or usage patterns\n2. Verify that the code in the modified Python files follows the correct usage patterns according to the library documentation in the /docs folder (beautifulsoup4.md, chromadb.md, crewai.md, langchain.md, ollama.md, playwright.md, pyqt6.md, pytest.md, python-dotenv.md, ruff.md)\n3. Run the ruff formatter on all modified Python files to ensure consistent code formatting\n4. Run the ruff linter on all modified Python files and fix any errors or warnings that are reported\n5. Ensure all code quality standards are met before considering the task complete\n\nFocus on maintaining consistency between the code and documentation, and ensure all Python code follows best practices as outlined in the /docs folder."
+  }
+}

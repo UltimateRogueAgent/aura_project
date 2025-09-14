@@ -4,10 +4,10 @@
 
   - [ ] 1.1 Create project structure and virtual environment setup
 
-    - Create modular directory structure matching idea.md specification
-    - Generate requirements.txt with exact libraries: crewai, crewai-tools, langchain-community, langchain-ollama, python-dotenv, playwright, beautifulsoup4, pyqt6, chromadb, ollama
+    - Create modular directory structure matching design.md specification
+    - Generate requirements.txt with exact libraries: crewai, crewai-tools, langchain-community, langchain-ollama, python-dotenv, playwright, beautifulsoup4, pyqt6, chromadb, ollama, ruff
     - Create Windows virtual environment setup script with pip install commands
-    - Add Ollama installation verification and model pulling (rogue-v1-brain, rogue-v1-agent)
+    - Add Ollama installation verification and model availability check (rogue-v1-brain, rogue-v1-agent are already available)
     - Create playwright install command for browser setup
     - _Requirements: 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8_
 
@@ -81,12 +81,12 @@
     - Write security tests for file operations
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 7.1, 7.2_
 
-  - [ ] 4.3 Implement web scraping and search tools exactly as specified in idea.md
+  - [ ] 4.3 Implement web scraping and search tools exactly as specified in design.md
     - Create WebTools class with Playwright integration for advanced web browsing
     - Add DuckDuckGoSearchRun tool for local search functionality
     - Implement BeautifulSoup4 content cleaning and HTML parsing
     - Add 8000 character limit for context management as specified
-    - Create web_scraper_tool and search_tool functions matching idea.md examples
+    - Create web_scraper_tool and search_tool functions matching design.md examples
     - Write unit tests for web tools
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5_
 
@@ -134,13 +134,13 @@
     - Write unit tests for each agent type
     - _Requirements: 3.1, 3.2, 3.3, 4.1, 4.2, 4.3, 2.4_
 
-  - [ ] 6.3 Integrate CrewAI orchestration system exactly as in idea.md
+  - [ ] 6.3 Integrate CrewAI orchestration system exactly as in design.md
     - Create Crew configuration with hierarchical Process.hierarchical
     - Implement Orchestrator as CrewAI manager using rogue-v1-brain model
     - Create task breakdown system where Designer agent plans tasks
-    - Implement run_crew function matching the idea.md specification
+    - Implement run_crew function matching the design.md specification
     - Add proper task delegation from Orchestrator to specialized agents
-    - Create workflow that matches the exact flow described in idea.md
+    - Create workflow that matches the exact flow described in design.md
     - Write integration tests for crew workflow
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5_
 
@@ -173,12 +173,12 @@
 
 - [ ] 8. Develop advanced chat interface
 
-  - [ ] 8.1 Create chat widget matching idea.md GUI specification
+  - [ ] 8.1 Create chat widget matching design.md GUI specification
 
     - Implement ChatWidget with QTextEdit for chat display and QLineEdit for input
     - Add real-time message display with agent logs and work progress
     - Create agent avatar system showing which agent is currently working
-    - Implement CrewWorker QThread for non-blocking GUI as shown in idea.md
+    - Implement CrewWorker QThread for non-blocking GUI as shown in design.md
     - Add smooth scrolling and auto-scroll functionality
     - Create message formatting for user input and agent responses
     - Write unit tests for chat widget components
@@ -265,9 +265,9 @@
 
 ---
 
-- [ ] 12. Implement context management and memory optimization from idea.md
+- [ ] 12. Implement context management and memory optimization from design.md
 
-  - [ ] 12.1 Add context window management as specified in idea.md
+  - [ ] 12.1 Add context window management as specified in design.md
 
     - Implement 8000 character limit for web scraping results
     - Create automatic context compression for long conversations
@@ -276,7 +276,7 @@
     - Write tests for context management functionality
     - _Requirements: 5.1, 5.2, 5.3, 5.5, 8.3, 8.4_
 
-  - [ ] 12.2 Create RAG memory system exactly as described in idea.md
+  - [ ] 12.2 Create RAG memory system exactly as described in design.md
     - Implement memory_search_tool and memory_save_tool functions
     - Add automatic memory search before starting new tasks
     - Create memory saving after completing important tasks
@@ -291,7 +291,7 @@
 
 - [ ] 13. Add security measures and final polish
 
-  - [ ] 13.1 Implement security measures from idea.md warnings
+  - [ ] 13.1 Implement security measures from design.md warnings
 
     - Add sandbox mode for agent operations with restricted file access
     - Implement user confirmation dialogs for dangerous operations
@@ -317,6 +317,6 @@
     - Create detailed logging with configurable levels
     - Fine-tune all animations and transitions
     - Add keyboard shortcuts and accessibility features
-    - Create final application launcher script matching idea.md
+    - Create final application launcher script matching design.md
     - Write comprehensive end-to-end tests
     - _Requirements: 7.4, 8.1, 8.2, 8.5, 1.1, 1.2, 1.3, 1.4, 1.5_
