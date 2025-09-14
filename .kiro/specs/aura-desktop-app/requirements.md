@@ -1,6 +1,6 @@
 # Requirements Document
 
-AURA (Autonomous Unit & Resource Arbitrator) to aplikacja desktopowa umożliwiająca komunikację z systemem orkiestracji agentów AI poprzez interfejs czatu. System składa się z Orkiestratora zarządzającego zespołem wyspecjalizowanych agentów (Researcher, Coder, Designer), którzy współpracują przy wykonywaniu złożonych zadań użytkownika. Aplikacja wykorzystuje lokalne modele LLM (Ollama) oraz pamięć wektorową do przechowywania wiedzy długoterminowej.
+AURA (Autonomous Unit & Resource Arbitrator) is a desktop application that enables communication with an AI agent orchestration system through a chat interface. The system consists of an Orchestrator managing a team of specialized agents (Researcher, Coder, Designer) who collaborate on executing complex user tasks. The application uses local LLM models (Ollama) and vector memory for storing long-term knowledge.
 
 ## Table of Contents
 
@@ -23,169 +23,169 @@ AURA (Autonomous Unit & Resource Arbitrator) to aplikacja desktopowa umożliwiaj
 
 - _User Story:_
 
-      Jako użytkownik, chcę mieć graficzny interfejs desktopowy z czatem, aby móc komunikować się z systemem AURA w intuicyjny sposób.
+      As a user, I want to have a graphical desktop interface with chat, so I can communicate with the AURA system intuitively.
 
 - _Acceptance Criteria:_
 
-      1. WHEN użytkownik uruchamia aplikację THEN system SHALL wyświetlić okno desktopowe z interfejsem czatu
-      2. WHEN użytkownik wpisuje polecenie w pole tekstowe THEN system SHALL wyświetlić wiadomość w oknie czatu
-      3. WHEN użytkownik naciśnie Enter lub przycisk "Wykonaj Zadanie" THEN system SHALL rozpocząć przetwarzanie polecenia
-      4. WHEN system przetwarza zadanie THEN aplikacja SHALL wyświetlać komunikaty o postępie w czasie rzeczywistym
-      5. WHEN zadanie zostanie zakończone THEN system SHALL wyświetlić końcowy wynik w oknie czatu
+      1. WHEN the user starts the application THEN the system SHALL display a desktop window with chat interface
+      2. WHEN the user types a command in the text field THEN the system SHALL display the message in the chat window
+      3. WHEN the user presses Enter or the "Execute Task" button THEN the system SHALL begin processing the command
+      4. WHEN the system is processing a task THEN the application SHALL display progress messages in real-time
+      5. WHEN the task is completed THEN the system SHALL display the final result in the chat window
 
 ### **Requirement 2**
 
 - _User Story:_
 
-      Jako użytkownik, chcę aby Orkiestrator analizował moje polecenia i delegował zadania do odpowiednich agentów, aby złożone problemy były rozwiązywane systematycznie.
+      As a user, I want the Orchestrator to analyze my commands and delegate tasks to appropriate agents, so complex problems are solved systematically.
 
 - _Acceptance Criteria:_
 
-      1. WHEN użytkownik poda złożone zadanie THEN Orkiestrator SHALL przeanalizować je i rozbić na mniejsze kroki
-      2. WHEN Orkiestrator identyfikuje kroki zadania THEN system SHALL przypisać każdy krok do odpowiedniego agenta (Researcher, Coder, Designer)
-      3. WHEN agent zakończy swoje zadanie THEN wynik SHALL być przekazany z powrotem do Orkiestratora
-      4. WHEN wszystkie kroki zostaną wykonane THEN Orkiestrator SHALL zsyntezować końcową odpowiedź
-      5. IF zadanie wymaga informacji z internetu THEN system SHALL delegować je do agenta Researcher
+      1. WHEN the user provides a complex task THEN the Orchestrator SHALL analyze it and break it down into smaller steps
+      2. WHEN the Orchestrator identifies task steps THEN the system SHALL assign each step to the appropriate agent (Researcher, Coder, Designer)
+      3. WHEN an agent completes its task THEN the result SHALL be passed back to the Orchestrator
+      4. WHEN all steps are completed THEN the Orchestrator SHALL synthesize the final response
+      5. IF the task requires information from the internet THEN the system SHALL delegate it to the Researcher agent
 
 ### **Requirement 3**
 
 - _User Story:_
 
-      Jako użytkownik, chcę aby agent Researcher mógł wyszukiwać i pobierać informacje z internetu, aby system miał dostęp do aktualnych danych.
+      As a user, I want the Researcher agent to be able to search and retrieve information from the internet, so the system has access to current data.
 
 - _Acceptance Criteria:_
 
-      1. WHEN Researcher otrzyma zadanie wyszukiwania THEN agent SHALL użyć narzędzi wyszukiwania internetowego
-      2. WHEN Researcher znajdzie relevantne strony THEN system SHALL pobrać i przetworzyć ich zawartość
-      3. WHEN zawartość zostanie pobrana THEN system SHALL oczyścić tekst z niepotrzebnych elementów HTML
-      4. WHEN tekst przekracza limit kontekstu THEN system SHALL ograniczyć go do maksymalnie 8000 znaków
-      5. WHEN Researcher zakończy wyszukiwanie THEN wyniki SHALL być przekazane do Orkiestratora
+      1. WHEN the Researcher receives a search task THEN the agent SHALL use internet search tools
+      2. WHEN the Researcher finds relevant pages THEN the system SHALL download and process their content
+      3. WHEN content is downloaded THEN the system SHALL clean the text of unnecessary HTML elements
+      4. WHEN text exceeds context limit THEN the system SHALL limit it to a maximum of 8000 characters
+      5. WHEN the Researcher completes the search THEN results SHALL be passed to the Orchestrator
 
 ### **Requirement 4**
 
 - _User Story:_
 
-      Jako użytkownik, chcę aby agent Coder mógł tworzyć, modyfikować i zarządzać plikami kodu, aby system mógł implementować rozwiązania programistyczne.
+      As a user, I want the Coder agent to be able to create, modify and manage code files, so the system can implement programming solutions.
 
 - _Acceptance Criteria:_
 
-      1. WHEN Coder otrzyma zadanie programistyczne THEN agent SHALL móc tworzyć nowe pliki
-      2. WHEN Coder pracuje z plikami THEN system SHALL umożliwić odczyt, zapis i listowanie plików
-      3. WHEN Coder potrzebuje wykonać polecenia systemowe THEN agent SHALL mieć dostęp do terminala
-      4. WHEN Coder tworzy kod THEN system SHALL zapisać go w odpowiedniej strukturze katalogów
-      5. IF operacja na plikach nie powiedzie się THEN system SHALL zwrócić informację o błędzie
+      1. WHEN the Coder receives a programming task THEN the agent SHALL be able to create new files
+      2. WHEN the Coder works with files THEN the system SHALL enable reading, writing and listing files
+      3. WHEN the Coder needs to execute system commands THEN the agent SHALL have access to terminal
+      4. WHEN the Coder creates code THEN the system SHALL save it in the appropriate directory structure
+      5. IF file operations fail THEN the system SHALL return error information
 
 ### **Requirement 5**
 
 - _User Story:_
 
-      Jako użytkownik, chcę aby system posiadał pamięć długoterminową, aby mógł wykorzystywać wcześniej zdobytą wiedzę w przyszłych zadaniach.
+      As a user, I want the system to have long-term memory, so it can utilize previously acquired knowledge in future tasks.
 
 - _Acceptance Criteria:_
 
-      1. WHEN system przetworzy ważne informacje THEN dane SHALL być zapisane w bazie wektorowej
-      2. WHEN agent potrzebuje informacji z przeszłości THEN system SHALL przeszukać pamięć długoterminową
-      3. WHEN system wyszukuje w pamięci THEN wyniki SHALL być posortowane według relevancji
-      4. WHEN pamięć zostanie zaktualizowana THEN system SHALL potwierdzić zapisanie danych
-      5. WHEN aplikacja zostanie uruchomiona ponownie THEN pamięć długoterminowa SHALL być zachowana
+      1. WHEN the system processes important information THEN data SHALL be saved in the vector database
+      2. WHEN an agent needs information from the past THEN the system SHALL search long-term memory
+      3. WHEN the system searches memory THEN results SHALL be sorted by relevance
+      4. WHEN memory is updated THEN the system SHALL confirm data saving
+      5. WHEN the application is restarted THEN long-term memory SHALL be preserved
 
 ### **Requirement 6**
 
 - _User Story:_
 
-      Jako użytkownik, chcę aby system wykorzystywał lokalne modele LLM przez Ollama, aby zachować prywatność i kontrolę nad danymi.
+      As a user, I want the system to use local LLM models through Ollama, so privacy and data control are maintained.
 
 - _Acceptance Criteria:_
 
-      1. WHEN system się uruchamia THEN aplikacja SHALL połączyć się z serwerem Ollama
-      2. WHEN Orkiestrator potrzebuje analizy THEN system SHALL użyć modelu rogue-v1-brain
-      3. WHEN agenci wykonują zadania THEN system SHALL użyć modelu rogue-v1-agent
-      4. IF połączenie z Ollama nie powiedzie się THEN system SHALL wyświetlić komunikat o błędzie
-      5. WHEN model przetwarza zapytanie THEN system SHALL obsłużyć odpowiedź asynchronicznie
+      1. WHEN the system starts THEN the application SHALL connect to the Ollama server
+      2. WHEN the Orchestrator needs analysis THEN the system SHALL use the rogue-v1-brain model
+      3. WHEN agents execute tasks THEN the system SHALL use the rogue-v1-agent model
+      4. IF connection to Ollama fails THEN the system SHALL display an error message
+      5. WHEN the model processes a query THEN the system SHALL handle the response asynchronously
 
 ### **Requirement 7**
 
 - _User Story:_
 
-      Jako użytkownik, chcę aby aplikacja działała bezpiecznie, aby nie narazić mojego systemu na szkody.
+      As a user, I want the application to operate securely, so my system is not exposed to harm.
 
 - _Acceptance Criteria:_
 
-      1. WHEN agent Coder wykonuje operacje na plikach THEN system SHALL ograniczyć dostęp do bezpiecznych katalogów
-      2. WHEN agent wykonuje polecenia terminala THEN system SHALL walidować polecenia pod kątem bezpieczeństwa
-      3. WHEN system wykryje potencjalnie niebezpieczną operację THEN aplikacja SHALL poprosić o potwierdzenie użytkownika
-      4. WHEN występuje błąd bezpieczeństwa THEN system SHALL zatrzymać wykonywanie zadania
-      5. IF użytkownik nie potwierdzi ryzykownej operacji THEN system SHALL anulować zadanie
+      1. WHEN the Coder agent performs file operations THEN the system SHALL restrict access to safe directories
+      2. WHEN an agent executes terminal commands THEN the system SHALL validate commands for security
+      3. WHEN the system detects a potentially dangerous operation THEN the application SHALL ask for user confirmation
+      4. WHEN a security error occurs THEN the system SHALL stop task execution
+      5. IF the user does not confirm a risky operation THEN the system SHALL cancel the task
 
 ### **Requirement 8**
 
 - _User Story:_
 
-      Jako użytkownik, chcę aby aplikacja działała wydajnie, aby nie przeciążać mojego komputera.
+      As a user, I want the application to operate efficiently, so it doesn't overload my computer.
 
 - _Acceptance Criteria:_
 
-      1. WHEN aplikacja przetwarza zadania THEN GUI SHALL pozostać responsywny
-      2. WHEN system wykonuje długotrwałe operacje THEN przetwarzanie SHALL odbywać się w osobnych wątkach
-      3. WHEN agent pobiera dane z internetu THEN system SHALL ograniczyć rozmiar pobieranych treści
-      4. WHEN pamięć kontekstu się zapełnia THEN system SHALL automatycznie zarządzać jej rozmiarem
-      5. WHEN użytkownik zamknie aplikację THEN wszystkie procesy SHALL zostać prawidłowo zakończone
+      1. WHEN the application processes tasks THEN the GUI SHALL remain responsive
+      2. WHEN the system executes long-running operations THEN processing SHALL occur in separate threads
+      3. WHEN an agent downloads data from the internet THEN the system SHALL limit the size of downloaded content
+      4. WHEN context memory fills up THEN the system SHALL automatically manage its size
+      5. WHEN the user closes the application THEN all processes SHALL be properly terminated
 
 ### **Requirement 9**
 
 - _User Story:_
 
-      Jako użytkownik, chcę aby system wykorzystywał określone biblioteki Python, aby zapewnić kompatybilność i funkcjonalność zgodną z projektem.
+      As a user, I want the system to use specific Python libraries, so compatibility and functionality are ensured according to the project design.
 
 - _Acceptance Criteria:_
 
-      1. WHEN system się inicjalizuje THEN aplikacja SHALL używać CrewAI jako framework do orkiestracji agentów
-      2. WHEN GUI jest tworzone THEN system SHALL wykorzystać PyQt6 do interfejsu desktopowego
-      3. WHEN agent Researcher wyszukuje informacje THEN system SHALL używać playwright do zaawansowanego przeglądania stron
-      4. WHEN system potrzebuje prostszego wyszukiwania THEN aplikacja SHALL wykorzystać duckduckgo-search
-      5. WHEN system parsuje HTML THEN aplikacja SHALL używać BeautifulSoup4
-      6. WHEN system łączy się z Ollama THEN aplikacja SHALL wykorzystać langchain-community i langchain-ollama
-      7. WHEN system zarządza pamięcią wektorową THEN aplikacja SHALL używać ChromaDB
-      8. WHEN system potrzebuje zmiennych środowiskowych THEN aplikacja SHALL wykorzystać python-dotenv
+      1. WHEN the system initializes THEN the application SHALL use CrewAI as the framework for agent orchestration
+      2. WHEN the GUI is created THEN the system SHALL utilize PyQt6 for the desktop interface
+      3. WHEN the Researcher agent searches for information THEN the system SHALL use playwright for advanced web browsing
+      4. WHEN the system needs simpler searching THEN the application SHALL utilize duckduckgo-search
+      5. WHEN the system parses HTML THEN the application SHALL use BeautifulSoup4
+      6. WHEN the system connects to Ollama THEN the application SHALL utilize langchain-community and langchain-ollama
+      7. WHEN the system manages vector memory THEN the application SHALL use ChromaDB
+      8. WHEN the system needs environment variables THEN the application SHALL utilize python-dotenv
 
 ### **Requirement 10**
 
 - _User Story:_
 
-      Jako użytkownik, chcę aby aplikacja obsługiwała narzędzia z serwerów MCP (Model Context Protocol), aby rozszerzyć możliwości agentów o dodatkowe funkcjonalności.
+      As a user, I want the application to support tools from MCP (Model Context Protocol) servers, so agents' capabilities are extended with additional functionalities.
 
 - _Acceptance Criteria:_
 
-      1. WHEN system się uruchamia THEN aplikacja SHALL automatycznie wykryć i połączyć się z dostępnymi serwerami MCP
-      2. WHEN serwer MCP jest dostępny THEN system SHALL załadować jego narzędzia i udostępnić je agentom
-      3. WHEN agent potrzebuje użyć narzędzia MCP THEN system SHALL wykonać wywołanie do odpowiedniego serwera
-      4. WHEN narzędzie MCP zwróci wynik THEN system SHALL przetworzyć odpowiedź i przekazać ją agentowi
-      5. IF serwer MCP nie jest dostępny THEN system SHALL kontynuować pracę z dostępnymi narzędziami lokalnymi
+      1. WHEN the system starts THEN the application SHALL automatically detect and connect to available MCP servers
+      2. WHEN an MCP server is available THEN the system SHALL load its tools and make them available to agents
+      3. WHEN an agent needs to use an MCP tool THEN the system SHALL execute a call to the appropriate server
+      4. WHEN an MCP tool returns a result THEN the system SHALL process the response and pass it to the agent
+      5. IF an MCP server is not available THEN the system SHALL continue working with available local tools
 
 ### **Requirement 11**
 
 - _User Story:_
 
-      Jako użytkownik, chcę aby aplikacja była modułowa i łatwa w nawigacji, aby móc łatwo rozbudowywać i modyfikować system.
+      As a user, I want the application to be modular and easy to navigate, so I can easily expand and modify the system.
 
 - _Acceptance Criteria:_
 
-      1. WHEN deweloper przegląda kod THEN struktura projektu SHALL być logicznie podzielona na moduły
-      2. WHEN deweloper chce dodać nowego agenta THEN system SHALL umożliwić łatwe dodanie przez utworzenie nowego modułu
-      3. WHEN deweloper chce dodać nowe narzędzie THEN system SHALL pozwolić na dodanie go w dedykowanym module narzędzi
-      4. WHEN deweloper modyfikuje funkcjonalność THEN zmiany SHALL być izolowane w odpowiednich modułach
-      5. WHEN system się uruchamia THEN moduły SHALL być automatycznie wykrywane i ładowane
+      1. WHEN a developer reviews the code THEN the project structure SHALL be logically divided into modules
+      2. WHEN a developer wants to add a new agent THEN the system SHALL enable easy addition by creating a new module
+      3. WHEN a developer wants to add a new tool THEN the system SHALL allow adding it in the dedicated tools module
+      4. WHEN a developer modifies functionality THEN changes SHALL be isolated in appropriate modules
+      5. WHEN the system starts THEN modules SHALL be automatically detected and loaded
 
 ### **Requirement 12**
 
 - _User Story:_
 
-      Jako użytkownik, chcę mieć centralny plik konfiguracyjny, aby łatwo zarządzać wszystkimi ustawieniami aplikacji w jednym miejscu.
+      As a user, I want to have a central configuration file, so I can easily manage all application settings in one place.
 
 - _Acceptance Criteria:_
 
-      1. WHEN aplikacja się uruchamia THEN system SHALL wczytać wszystkie ustawienia z centralnego pliku konfiguracyjnego
-      2. WHEN użytkownik zmieni ustawienie w pliku konfiguracyjnym THEN zmiana SHALL być automatycznie zastosowana w całej aplikacji
-      3. WHEN moduł potrzebuje parametru konfiguracyjnego THEN system SHALL automatycznie dostarczyć wartość z centralnej konfiguracji
-      4. WHEN dodawany jest nowy moduł THEN jego ustawienia SHALL być dodane do centralnego pliku konfiguracyjnego
-      5. IF plik konfiguracyjny nie istnieje THEN system SHALL utworzyć domyślny plik z podstawowymi ustawieniami
+      1. WHEN the application starts THEN the system SHALL load all settings from the central configuration file
+      2. WHEN the user changes a setting in the configuration file THEN the change SHALL be automatically applied throughout the application
+      3. WHEN a module needs a configuration parameter THEN the system SHALL automatically provide the value from central configuration
+      4. WHEN a new module is added THEN its settings SHALL be added to the central configuration file
+      5. IF the configuration file does not exist THEN the system SHALL create a default file with basic settings

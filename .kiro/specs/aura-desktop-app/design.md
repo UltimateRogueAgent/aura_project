@@ -1,6 +1,6 @@
 # Design Document - AURA Desktop Application
 
-AURA (Autonomous Unit & Resource Arbitrator) to modułowa aplikacja desktopowa zbudowana w architekturze wieloagentowej, która umożliwia użytkownikom komunikację z systemem orkiestracji agentów AI poprzez intuicyjny interfejs czatu. System wykorzystuje CrewAI do zarządzania agentami, Ollama do obsługi lokalnych modeli LLM, oraz ChromaDB do pamięci długoterminowej.
+AURA (Autonomous Unit & Resource Arbitrator) is a modular desktop application built with multi-agent architecture that enables users to communicate with an AI agent orchestration system through an intuitive chat interface. The system uses CrewAI for agent management, Ollama for local LLM model handling, and ChromaDB for long-term memory.
 
 ## Architecture
 
@@ -59,80 +59,80 @@ graph TB
 aura_project/
 ├── config/
 │   ├── __init__.py
-│   ├── settings.py          # Centralny manager konfiguracji
-│   ├── default_config.yaml  # Domyślne ustawienia
-│   └── themes/              # Motywy GUI
+│   ├── settings.py          # Central configuration manager
+│   ├── default_config.yaml  # Default settings
+│   └── themes/              # GUI themes
 │       ├── dark.yaml
 │       ├── light.yaml
 │       └── custom.yaml
 ├── core/
 │   ├── __init__.py
-│   ├── application.py       # Główna logika aplikacji
-│   └── event_manager.py     # System zdarzeń
+│   ├── application.py       # Main application logic
+│   └── event_manager.py     # Event system
 ├── agents/
 │   ├── __init__.py
-│   ├── base_agent.py        # Bazowa klasa agenta
-│   ├── researcher.py        # Agent Researcher
-│   ├── coder.py            # Agent Coder
-│   └── designer.py         # Agent Designer
+│   ├── base_agent.py        # Base agent class
+│   ├── researcher.py        # Researcher Agent
+│   ├── coder.py            # Coder Agent
+│   └── designer.py         # Designer Agent
 ├── tools/
 │   ├── __init__.py
-│   ├── base_tool.py        # Bazowa klasa narzędzia
-│   ├── file_tools.py       # Narzędzia do plików
-│   ├── web_tools.py        # Narzędzia internetowe
-│   └── mcp_tools.py        # Integracja z MCP
+│   ├── base_tool.py        # Base tool class
+│   ├── file_tools.py       # File tools
+│   ├── web_tools.py        # Web tools
+│   └── mcp_tools.py        # MCP integration
 ├── memory/
 │   ├── __init__.py
 │   ├── vector_store.py     # ChromaDB integration
-│   └── memory_manager.py   # Manager pamięci
+│   └── memory_manager.py   # Memory manager
 ├── gui/
 │   ├── __init__.py
-│   ├── main_window.py      # Główne okno
-│   ├── chat_widget.py      # Widget czatu
-│   ├── settings_panel.py   # Zaawansowany panel ustawień
-│   ├── theme_manager.py    # Manager motywów
-│   ├── animation_manager.py # Manager animacji
-│   ├── components/         # Komponenty UI
+│   ├── main_window.py      # Main window
+│   ├── chat_widget.py      # Chat widget
+│   ├── settings_panel.py   # Advanced settings panel
+│   ├── theme_manager.py    # Theme manager
+│   ├── animation_manager.py # Animation manager
+│   ├── components/         # UI components
 │   │   ├── __init__.py
 │   │   ├── progress_widgets.py
 │   │   ├── agent_status.py
 │   │   ├── tool_indicators.py
 │   │   ├── notification_system.py
 │   │   └── modern_controls.py
-│   └── styles/             # Style CSS/QSS
+│   └── styles/             # CSS/QSS styles
 │       ├── dark_theme.qss
 │       ├── light_theme.qss
 │       └── animations.qss
 ├── integrations/
 │   ├── __init__.py
-│   ├── ollama_client.py    # Klient Ollama
-│   └── mcp_client.py       # Klient MCP
+│   ├── ollama_client.py    # Ollama client
+│   └── mcp_client.py       # MCP client
 ├── utils/
 │   ├── __init__.py
-│   ├── logging.py          # System logowania
-│   └── validators.py       # Walidatory
-├── assets/                 # Zasoby graficzne
+│   ├── logging.py          # Logging system
+│   └── validators.py       # Validators
+├── assets/                 # Graphic resources
 │   ├── icons/
 │   ├── fonts/
 │   └── animations/
-├── main.py                 # Punkt wejścia aplikacji
-└── requirements.txt        # Zależności
+├── main.py                 # Application entry point
+└── requirements.txt        # Dependencies
 ```
 
 ## Components and Interfaces
 
 ### 1. Configuration Manager
 
-**Lokalizacja:** `config/settings.py`
+**Location:** `config/settings.py`
 
-**Odpowiedzialność:** Centralne zarządzanie wszystkimi ustawieniami aplikacji
+**Responsibility:** Central management of all application settings
 
-**Kluczowe funkcje:**
+**Key functions:**
 
-- Ładowanie konfiguracji z pliku YAML
-- Automatyczne wykrywanie zmian w konfiguracji
-- Walidacja ustawień
-- Dostarczanie ustawień do wszystkich modułów
+- Loading configuration from YAML file
+- Automatic detection of configuration changes
+- Settings validation
+- Providing settings to all modules
 
 **Interface:**
 
@@ -149,16 +149,16 @@ class ConfigManager:
 
 ### 2. Core Application Logic
 
-**Lokalizacja:** `core/application.py`
+**Location:** `core/application.py`
 
-**Odpowiedzialność:** Główna logika aplikacji, koordynacja między komponentami
+**Responsibility:** Main application logic, coordination between components
 
-**Kluczowe funkcje:**
+**Key functions:**
 
-- Inicjalizacja wszystkich komponentów
-- Zarządzanie cyklem życia aplikacji
-- Koordynacja komunikacji między warstwami
-- Obsługa błędów na poziomie aplikacji
+- Initialization of all components
+- Application lifecycle management
+- Coordination of communication between layers
+- Application-level error handling
 
 **Interface:**
 
@@ -175,11 +175,11 @@ class AuraApplication:
 
 ### 3. Agent System
 
-**Lokalizacja:** `agents/`
+**Location:** `agents/`
 
-**Odpowiedzialność:** Implementacja systemu agentów z wykorzystaniem CrewAI
+**Responsibility:** Implementation of agent system using CrewAI
 
-**Architektura agentów:**
+**Agent architecture:**
 
 #### Base Agent
 
@@ -191,43 +191,43 @@ class BaseAgent:
     def get_capabilities(self) -> List[str]
 ```
 
-#### Orchestrator (Manager w CrewAI)
+#### Orchestrator (Manager in CrewAI)
 
 - **Model:** rogue-v1-brain
-- **Rola:** Zarządzanie i koordynacja innych agentów
-- **Narzędzia:** Memory tools, MCP tools
-- **Proces:** Hierarchical process w CrewAI
+- **Role:** Management and coordination of other agents
+- **Tools:** Memory tools, MCP tools
+- **Process:** Hierarchical process in CrewAI
 
 #### Researcher Agent
 
 - **Model:** rogue-v1-agent
-- **Rola:** Wyszukiwanie i agregacja informacji
-- **Narzędzia:** Web scraping, search engines, MCP brave search, other MCP tools
-- **Specjalizacja:** Analiza danych, research internetowy
+- **Role:** Information search and aggregation
+- **Tools:** Web scraping, search engines, MCP brave search, other MCP tools
+- **Specialization:** Data analysis, internet research
 
 #### Coder Agent
 
 - **Model:** rogue-v1-agent
-- **Rola:** Tworzenie i zarządzanie kodem
-- **Narzędzia:** File system, terminal, MCP context7, other MCP tools
-- **Specjalizacja:** Programowanie, debugowanie, zarządzanie plikami
+- **Role:** Code creation and management
+- **Tools:** File system, terminal, MCP context7, other MCP tools
+- **Specialization:** Programming, debugging, file management
 
 #### Designer Agent
 
 - **Model:** rogue-v1-agent
-- **Rola:** Planowanie i projektowanie rozwiązań
-- **Narzędzia:** Memory tools, MCP tools
-- **Specjalizacja:** Architektura systemu, planowanie zadań
+- **Role:** Solution planning and design
+- **Tools:** Memory tools, MCP tools
+- **Specialization:** System architecture, task planning
 
 ---
 
 ### 4. Tool System
 
-**Lokalizacja:** `tools/`
+**Location:** `tools/`
 
-**Odpowiedzialność:** Modułowy system narzędzi dla agentów
+**Responsibility:** Modular tool system for agents
 
-**Architektura narzędzi:**
+**Tool architecture:**
 
 #### Base Tool Interface
 
@@ -266,11 +266,11 @@ class BaseTool:
 
 ### 5. Memory System
 
-**Lokalizacja:** `memory/`
+**Location:** `memory/`
 
-**Odpowiedzialność:** Zarządzanie pamięcią długoterminową i krótkoterminową
+**Responsibility:** Management of long-term and short-term memory
 
-**Komponenty:**
+**Components:**
 
 #### Vector Store Manager
 
@@ -285,20 +285,20 @@ class VectorStoreManager:
 
 #### Memory Manager
 
-- Automatyczne zarządzanie kontekstem
-- Kompresja długich konwersacji
-- Kategoryzacja wspomnień
-- Garbage collection dla starych danych
+- Automatic context management
+- Compression of long conversations
+- Memory categorization
+- Garbage collection for old data
 
 ---
 
 ### 6. GUI Layer
 
-**Lokalizacja:** `gui/`
+**Location:** `gui/`
 
-**Odpowiedzialność:** Nowoczesny interfejs użytkownika z wykorzystaniem PyQt6
+**Responsibility:** Modern user interface using PyQt6
 
-**Architektura GUI:**
+**GUI Architecture:**
 
 #### Main Window
 
@@ -364,9 +364,9 @@ class AnimationManager:
 
 ### 7. Integration Layer
 
-**Lokalizacja:** `integrations/`
+**Location:** `integrations/`
 
-**Odpowiedzialność:** Integracja z zewnętrznymi serwisami
+**Responsibility:** Integration with external services
 
 #### Ollama Client
 
