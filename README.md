@@ -8,70 +8,70 @@
 [![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-red?style=flat-square)](https://ollama.ai)
 [![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20DB-purple?style=flat-square)](https://www.trychroma.com)
 
-## _Inteligentny asystent desktopowy z wieloagentowym systemem AI_
+## _Intelligent desktop assistant with multi-agent AI system_
 
-[🚀 Instalacja](#-instalacja) • [📖 Dokumentacja](#-dokumentacja) • [🎯 Funkcje](#-kluczowe-funkcje) • [🏗️ Architektura](#️-architektura) • [🤝 Współpraca](#-współpraca)
+[🚀 Installation](#-installation) • [📖 Documentation](#-documentation) • [🎯 Features](#-key-features) • [🏗️ Architecture](#️-architecture) • [🤝 Contributing](#-contributing)
 
 ---
 
-## 📋 Spis treści
+## 📋 Table of Contents
 
-- [🌟 O projekcie](#-o-projekcie)
-- [✨ Kluczowe funkcje](#-kluczowe-funkcje)
-- [🏗️ Architektura](#️-architektura)
-- [🚀 Instalacja](#-instalacja)
-- [🎮 Szybki start](#-szybki-start)
-- [📖 Dokumentacja](#-dokumentacja)
-- [🔧 Konfiguracja](#-konfiguracja)
-- [🧪 Testowanie](#-testowanie)
-- [🤝 Współpraca](#-współpraca)
+- [🌟 About the project](#-about-the-project)
+- [✨ Key features](#-key-features)
+- [🏗️ Architecture](#️-architecture)
+- [🚀 Installation](#-installation)
+- [🎮 Quick start](#-quick-start)
+- [📖 Documentation](#-documentation)
+- [🔧 Configuration](#-configuration)
+- [🧪 Testing](#-testing)
+- [🤝 Contributing](#-contributing)
 
-## 🌟 O projekcie
+## 🌟 About the project
 
-**AURA** to zaawansowana aplikacja desktopowa, która wykorzystuje wieloagentowy system AI do automatyzacji złożonych zadań. Zbudowana w architekturze modułowej, AURA łączy w sobie moc lokalnych modeli językowych z intuicyjnym interfejsem graficznym, oferując użytkownikom inteligentnego asystenta zdolnego do:
+**AURA** is an advanced desktop application that uses a multi-agent AI system to automate complex tasks. Built with modular architecture, AURA combines the power of local language models with an intuitive graphical interface, offering users an intelligent assistant capable of:
 
-- 🔍 **Badań internetowych** i agregacji informacji
-- 💻 **Zarządzania kodem** i operacji na plikach
-- 🎨 **Planowania rozwiązań** i architektury systemów
-- 🧠 **Zapamiętywania kontekstu** między sesjami
-- 🔒 **Pracy offline** z pełną kontrolą nad danymi
+- 🔍 **Web research** and information aggregation
+- 💻 **Code management** and file operations
+- 🎨 **Solution planning** and system architecture
+- 🧠 **Context memory** between sessions
+- 🔒 **Offline operation** with full data control
 
-## ✨ Kluczowe funkcje
+## ✨ Key features
 
-### 🤖 Wieloagentowy System AI
+### 🤖 Multi-Agent AI System
 
-- **Orchestrator** - zarządza i koordynuje inne agenty (model: `rogue-v1-brain`)
-- **Researcher Agent** - wyszukiwanie i analiza informacji (model: `rogue-v1-agent`)
-- **Coder Agent** - tworzenie i zarządzanie kodem (model: `rogue-v1-agent`)
-- **Designer Agent** - planowanie i projektowanie rozwiązań (model: `rogue-v1-agent`)
+- **Orchestrator** - manages and coordinates other agents (model: `rogue-v1-brain`)
+- **Researcher Agent** - searches and analyzes information (model: `rogue-v1-agent`)
+- **Coder Agent** - creates and manages code (model: `rogue-v1-agent`)
+- **Designer Agent** - plans and designs solutions (model: `rogue-v1-agent`)
 
-### 🎨 Nowoczesny interfejs
+### 🎨 Modern interface
 
-- **PyQt6** z ciemnymi/jasnymi motywami
-- **Płynne animacje** i przejścia
-- **Responsywny design** z zaawansowanymi kontrolkami
-- **Real-time chat** z wizualizacją postępu
+- **PyQt6** with dark/light themes
+- **Smooth animations** and transitions
+- **Responsive design** with advanced controls
+- **Real-time chat** with progress visualization
 
-### 🧠 Inteligentna pamięć
+### 🧠 Intelligent memory
 
-- **ChromaDB** do przechowywania wektorów
-- **Długoterminowa pamięć** między sesjami
-- **Semantyczne wyszukiwanie** w historii
-- **Automatyczna kategoryzacja** wspomnień
+- **ChromaDB** for vector storage
+- **Long-term memory** between sessions
+- **Semantic search** in history
+- **Automatic categorization** of memories
 
-### 🌐 Zaawansowane narzędzia
+### 🌐 Advanced tools
 
-- **Playwright** do automatyzacji przeglądarek
-- **BeautifulSoup4** do parsowania HTML
-- **DuckDuckGo Search** do wyszukiwania
-- **MCP Protocol** do rozszerzalności
+- **Playwright** for browser automation
+- **BeautifulSoup4** for HTML parsing
+- **DuckDuckGo Search** for searching
+- **MCP Protocol** for extensibility
 
-### 🔒 Bezpieczeństwo i prywatność
+### 🔒 Security and privacy
 
-- **Lokalne przetwarzanie** z Ollama
-- **Tryb sandbox** dla operacji
-- **Walidacja bezpieczeństwa** dla wszystkich akcji
-- **Pełna kontrola nad danymi**
+- **Local processing** with Ollama
+- **Sandbox mode** for operations
+- **Security validation** for all actions
+- **Full control over data**
 
 ## 🏗️ Architektura
 
@@ -124,63 +124,63 @@ graph TB
     CREW --> CHROMA
 ```
 
-### 📁 Struktura projektu
+### 📁 Project structure
 
 ```text
 aura_project/
-├── 📁 config/              # Zarządzanie konfiguracją
-├── 📁 core/                # Logika aplikacji
-├── 📁 agents/              # Implementacje agentów
-├── 📁 tools/               # Narzędzia dla agentów
-├── 📁 memory/              # System pamięci
-├── 📁 gui/                 # Interfejs PyQt6
-├── 📁 integrations/        # Integracje zewnętrzne
-├── 📁 utils/               # Narzędzia pomocnicze
-├── 📁 assets/              # Zasoby graficzne
-├── 📁 tests/               # Testy jednostkowe i integracyjne
-├── 📁 docs/                # Dokumentacja bibliotek
-├── 📄 main.py              # Punkt wejścia aplikacji
-├── 📄 requirements.txt     # Zależności Python
-└── 📄 README.md           # Ten plik
+├── 📁 config/              # Configuration management
+├── 📁 core/                # Application logic
+├── 📁 agents/              # Agent implementations
+├── 📁 tools/               # Agent tools
+├── 📁 memory/              # Memory system
+├── 📁 gui/                 # PyQt6 interface
+├── 📁 integrations/        # External integrations
+├── 📁 utils/               # Helper utilities
+├── 📁 assets/              # Graphic resources
+├── 📁 tests/               # Unit and integration tests
+├── 📁 docs/                # Library documentation
+├── 📄 main.py              # Application entry point
+├── 📄 requirements.txt     # Python dependencies
+└── 📄 README.md           # This file
 ```
 
-## 🚀 Instalacja
+## 🚀 Installation
 
-### Wymagania systemowe
+### System requirements
 
 - **Python 3.9+**
 - **Git**
-- **Ollama** (do lokalnych modeli LLM)
-- **8GB RAM** (zalecane 16GB)
-- **GPU** (opcjonalne, dla lepszej wydajności)
+- **Ollama** (for local LLM models)
+- **8GB RAM** (16GB recommended)
+- **GPU** (optional, for better performance)
 
-### 1️⃣ Klonowanie repozytorium
+### 1️⃣ Clone repository
 
 ```bash
 git clone https://github.com/your-username/aura_project.git
 cd aura_project
 ```
 
-### 2️⃣ Konfiguracja środowiska
+### 2️⃣ Environment setup
 
 ```bash
-# Tworzenie środowiska wirtualnego
+# Create virtual environment
 python -m venv aura_env
 
-# Aktywacja środowiska
+# Activate environment
 # Windows:
 aura_env\Scripts\activate
 # macOS/Linux:
 source aura_env/bin/activate
 
-# Instalacja zależności
+# Install dependencies
 pip install -r requirements.txt
 
-# Instalacja przeglądarek dla Playwright
+# Install browsers for Playwright
 playwright install
 ```
 
-### 3️⃣ Instalacja Ollama
+### 3️⃣ Install Ollama
 
 ```bash
 # Windows (PowerShell)
@@ -193,82 +193,82 @@ curl -fsSL https://ollama.ai/install.sh | sh
 curl -fsSL https://ollama.ai/install.sh | sh
 ```
 
-### 4️⃣ Pobieranie modeli
+### 4️⃣ Download models
 
 ```bash
-# Pobieranie wymaganych modeli
+# Download required models
 ollama pull rogue-v1-brain
 ollama pull rogue-v1-agent
 ```
 
-### 5️⃣ Konfiguracja
+### 5️⃣ Configuration
 
 ```bash
-# Kopiowanie przykładowej konfiguracji
+# Copy example configuration
 cp config/default_config.yaml config/local_config.yaml
 
-# Edytuj config/local_config.yaml według potrzeb
+# Edit config/local_config.yaml as needed
 ```
 
-## 🎮 Szybki start
+## 🎮 Quick start
 
-### Uruchomienie aplikacji
+### Running the application
 
 ```bash
-# Aktywacja środowiska
+# Activate environment
 source aura_env/bin/activate  # Linux/macOS
-# lub
+# or
 aura_env\Scripts\activate     # Windows
 
-# Uruchomienie AURA
+# Run AURA
 python main.py
 ```
 
-### Pierwsze kroki
+### First steps
 
-1. **Uruchom Ollama** w tle
-2. **Otwórz AURA** - pojawi się główne okno aplikacji
-3. **Napisz zapytanie** w interfejsie czatu
-4. **Obserwuj pracę agentów** w czasie rzeczywistym
-5. **Przeglądaj wyniki** i historię konwersacji
+1. **Start Ollama** in the background
+2. **Open AURA** - the main application window will appear
+3. **Write a query** in the chat interface
+4. **Watch agents work** in real-time
+5. **Browse results** and conversation history
 
-### Przykładowe zapytania
+### Example queries
 
 ```text
-🔍 "Znajdź najnowsze informacje o PyQt6 i podsumuj kluczowe funkcje"
+🔍 "Find the latest information about PyQt6 and summarize key features"
 
-💻 "Stwórz prostą aplikację Flask z endpointem API"
+💻 "Create a simple Flask application with an API endpoint"
 
-🎨 "Zaplanuj architekturę systemu do zarządzania zadaniami"
+🎨 "Plan an architecture for a task management system"
 
-📊 "Przeanalizuj ten kod i zaproponuj optymalizacje"
+📊 "Analyze this code and suggest optimizations"
 ```
 
-## 📖 Dokumentacja
+## 📖 Documentation
 
-### 📚 Dokumentacja bibliotek
+### 📚 Library documentation
 
-W folderze `docs/` znajdziesz szczegółową dokumentację wszystkich używanych bibliotek:
+In the `docs/` folder you'll find detailed documentation for all used libraries:
 
-- [CrewAI](docs/crewai.md) - Orkiestracja agentów AI
-- [LangChain](docs/langchain.md) - Framework dla aplikacji LLM
-- [Playwright](docs/playwright.md) - Automatyzacja przeglądarek
-- [BeautifulSoup4](docs/beautifulsoup4.md) - Parsowanie HTML/XML
-- [PyQt6](docs/pyqt6.md) - Framework GUI
-- [ChromaDB](docs/chromadb.md) - Baza danych wektorowych
-- [Ollama](docs/ollama.md) - Lokalne modele LLM
-- [Python-dotenv](docs/python-dotenv.md) - Zmienne środowiskowe
-- [Ruff](docs/ruff.md) - Linter i formatter
-- [Pytest](docs/pytest.md) - Framework testowy
+- [CrewAI](docs/crewai.md) - AI agent orchestration
+- [LangChain](docs/langchain.md) - Framework for LLM applications
+- [Playwright](docs/playwright.md) - Browser automation
+- [BeautifulSoup4](docs/beautifulsoup4.md) - HTML/XML parsing
+- [PyQt6](docs/pyqt6.md) - GUI framework
+- [ChromaDB](docs/chromadb.md) - Vector database
+- [Ollama](docs/ollama.md) - Local LLM models
+- [Python-dotenv](docs/python-dotenv.md) - Environment variables
+- [Ruff](docs/ruff.md) - Linter and formatter
+- [Pytest](docs/pytest.md) - Testing framework
 
-### 🏗️ Dokumentacja architektury
+### 🏗️ Architecture documentation
 
-- [Design Document](.kiro/specs/aura-desktop-app/design.md) - Szczegółowy opis architektury
-- [Implementation Plan](.kiro/specs/aura-desktop-app/tasks.md) - Plan implementacji
+- [Design Document](.kiro/specs/aura-desktop-app/design.md) - Detailed architecture description
+- [Implementation Plan](.kiro/specs/aura-desktop-app/tasks.md) - Implementation plan
 
-## 🔧 Konfiguracja
+## 🔧 Configuration
 
-### Podstawowa konfiguracja
+### Basic configuration
 
 ```yaml
 # config/local_config.yaml
@@ -297,7 +297,7 @@ security:
   require_confirmation: true
 ```
 
-### Zmienne środowiskowe
+### Environment variables
 
 ```bash
 # .env
@@ -307,128 +307,128 @@ DEBUG=False
 LOG_LEVEL=INFO
 ```
 
-## 🧪 Testowanie
+## 🧪 Testing
 
-### Uruchomienie testów
+### Running tests
 
 ```bash
-# Wszystkie testy
+# All tests
 pytest
 
-# Testy jednostkowe
+# Unit tests
 pytest tests/unit/
 
-# Testy integracyjne
+# Integration tests
 pytest tests/integration/
 
-# Testy bezpieczeństwa
+# Security tests
 pytest tests/security/
 
-# Z pokryciem kodu
+# With code coverage
 pytest --cov=aura_project --cov-report=html
 ```
 
-### Linting i formatowanie
+### Linting and formatting
 
 ```bash
-# Sprawdzenie stylu kodu
+# Check code style
 ruff check .
 
-# Automatyczne formatowanie
+# Automatic formatting
 ruff format .
 
-# Sprawdzenie typów
+# Type checking
 mypy .
 ```
 
-## 🤝 Współpraca
+## 🤝 Contributing
 
-Zapraszamy do współpracy! Oto jak możesz pomóc:
+We welcome contributions! Here's how you can help:
 
-### 🐛 Zgłaszanie błędów
+### 🐛 Reporting bugs
 
-1. Sprawdź [istniejące issues](https://github.com/your-username/aura_project/issues)
-2. Utwórz nowy issue z szczegółowym opisem
-3. Dołącz logi i kroki reprodukcji
+1. Check [existing issues](https://github.com/your-username/aura_project/issues)
+2. Create a new issue with detailed description
+3. Include logs and reproduction steps
 
-### 💡 Propozycje funkcji
+### 💡 Feature suggestions
 
-1. Otwórz issue z tagiem `enhancement`
-2. Opisz szczegółowo proponowaną funkcję
-3. Wyjaśnij przypadki użycia
+1. Open an issue with `enhancement` tag
+2. Describe the proposed feature in detail
+3. Explain use cases
 
-### 🔧 Rozwój
+### 🔧 Development
 
-1. **Fork** repozytorium
-2. Utwórz **branch** dla swojej funkcji (`git checkout -b feature/amazing-feature`)
-3. **Commit** zmiany (`git commit -m 'Add amazing feature'`)
-4. **Push** do brancha (`git push origin feature/amazing-feature`)
-5. Otwórz **Pull Request**
+1. **Fork** the repository
+2. Create a **branch** for your feature (`git checkout -b feature/amazing-feature`)
+3. **Commit** changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to branch (`git push origin feature/amazing-feature`)
+5. Open a **Pull Request**
 
-### 📋 Wytyczne dla deweloperów
+### 📋 Developer guidelines
 
-- Używaj **Python 3.9+**
-- Przestrzegaj **PEP 8** (sprawdzane przez Ruff)
-- Pisz **testy** dla nowego kodu
-- Aktualizuj **dokumentację**
-- Używaj **type hints**
+- Use **Python 3.9+**
+- Follow **PEP 8** (checked by Ruff)
+- Write **tests** for new code
+- Update **documentation**
+- Use **type hints**
 
-## 🛡️ Bezpieczeństwo
+## 🛡️ Security
 
-AURA została zaprojektowana z myślą o bezpieczeństwie:
+AURA has been designed with security in mind:
 
-- **Lokalne przetwarzanie** - wszystkie dane pozostają na Twoim komputerze
-- **Tryb sandbox** - ograniczone uprawnienia dla operacji systemowych
-- **Walidacja wejść** - wszystkie dane są sprawdzane przed przetworzeniem
-- **Szyfrowanie** - wrażliwe dane są szyfrowane
-- **Audyt** - wszystkie operacje są logowane
+- **Local processing** - all data stays on your computer
+- **Sandbox mode** - limited permissions for system operations
+- **Input validation** - all data is checked before processing
+- **Encryption** - sensitive data is encrypted
+- **Audit** - all operations are logged
 
-### Zgłaszanie luk bezpieczeństwa
+### Reporting security vulnerabilities
 
-Jeśli znajdziesz lukę bezpieczeństwa, prosimy o kontakt na: <admin@rogueagent.dev>
+If you find a security vulnerability, please contact us at: <admin@rogueagent.dev>
 
-## 🌟 Roadmapa
+## 🌟 Roadmap
 
-### v1.0 - Podstawowa funkcjonalność
+### v1.0 - Basic functionality
 
-- [x] Wieloagentowy system AI
-- [x] Interfejs PyQt6
-- [x] Integracja z Ollama
-- [x] System pamięci ChromaDB
-- [ ] Pełne testy i dokumentacja
+- [x] Multi-agent AI system
+- [x] PyQt6 interface
+- [x] Ollama integration
+- [x] ChromaDB memory system
+- [ ] Complete tests and documentation
 
-### v1.1 - Rozszerzenia
+### v1.1 - Extensions
 
-- [ ] Więcej narzędzi MCP
-- [ ] Zaawansowane personalizacje GUI
-- [ ] Eksport/import konfiguracji
-- [ ] Wtyczki społeczności
+- [ ] More MCP tools
+- [ ] Advanced GUI customizations
+- [ ] Configuration export/import
+- [ ] Community plugins
 
-### v2.0 - Zaawansowane funkcje
+### v2.0 - Advanced features
 
-- [ ] Rozproszone przetwarzanie
-- [ ] Integracja z chmurą (opcjonalna)
-- [ ] Zaawansowana analityka
-- [ ] API dla deweloperów
+- [ ] Distributed processing
+- [ ] Cloud integration (optional)
+- [ ] Advanced analytics
+- [ ] Developer API
 
-## 🙏 Podziękowania
+## 🙏 Acknowledgments
 
-AURA nie byłaby możliwa bez wspaniałych projektów open source:
+AURA wouldn't be possible without wonderful open source projects:
 
-- [CrewAI](https://github.com/joaomdmoura/crewAI) - Framework wieloagentowy
-- [Ollama](https://ollama.ai) - Lokalne modele LLM
-- [PyQt6](https://www.riverbankcomputing.com/software/pyqt/) - Framework GUI
-- [ChromaDB](https://www.trychroma.com) - Baza danych wektorowych
-- [Playwright](https://playwright.dev) - Automatyzacja przeglądarek
+- [CrewAI](https://github.com/joaomdmoura/crewAI) - Multi-agent framework
+- [Ollama](https://ollama.ai) - Local LLM models
+- [PyQt6](https://www.riverbankcomputing.com/software/pyqt/) - GUI framework
+- [ChromaDB](https://www.trychroma.com) - Vector database
+- [Playwright](https://playwright.dev) - Browser automation
 
-## 📞 Kontakt
+## 📞 Contact
 
 - **Email**: <admin@rogueagent.dev>
 - **Discord**:
-- **GitHub**: [Issues i dyskusje](https://github.com/your-username/aura_project)
+- **GitHub**: [Issues and discussions](https://github.com/your-username/aura_project)
 
 ---
 
-## **Zbudowane z ❤️ przez Ultimate Judge**
+## **Built with ❤️ by Ultimate Judge**
 
-[⭐ Daj gwiazdkę](https://github.com/your-username/aura_project) • [🐛 Zgłoś błąd](https://github.com/your-username/aura_project/issues) • [💡 Zaproponuj funkcję](https://github.com/your-username/aura_project/issues/new)
+[⭐ Give a star](https://github.com/your-username/aura_project) • [🐛 Report bug](https://github.com/your-username/aura_project/issues) • [💡 Suggest feature](https://github.com/your-username/aura_project/issues/new)
