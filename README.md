@@ -73,7 +73,7 @@
 - **Security validation** for all actions
 - **Full control over data**
 
-## 🏗️ Architektura
+## 🏗️ Architecture
 
 ```mermaid
 graph TB

@@ -1,0 +1,13 @@
+crewai
+crewai-tools
+langchain-community
+langchain-ollama
+python-dotenv
+playwright
+beautifulsoup4
+pyqt6
+chromadb
+ollama
+ruff
+pyyaml
+watchdog
