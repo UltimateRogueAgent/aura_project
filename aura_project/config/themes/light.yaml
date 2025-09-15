@@ -1,0 +1,9 @@
+# Light Theme Colors
+primary_color: "#E2E8F0"
+secondary_color: "#CBD5E0"
+accent_color: "#4299E1"
+text_color: "#1A202C"
+background_color: "#F7FAFC"
+success_color: "#38A169"
+warning_color: "#DD6B20"
+error_color: "#C53030"
