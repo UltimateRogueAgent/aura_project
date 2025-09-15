@@ -11,3 +11,4 @@ ollama
 ruff
 pyyaml
 watchdog
+psutil

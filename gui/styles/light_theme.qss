@@ -1,0 +1,30 @@
+/* Light Theme for AURA */
+
+QWidget {
+    background-color: @background_color;
+    color: @text_color;
+    font-family: "Segoe UI";
+    font-size: 12px;
+}
+
+QPushButton {
+    background-color: @primary_color;
+    border: 1px solid @secondary_color;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+QPushButton:hover {
+    background-color: @secondary_color;
+}
+
+QPushButton:pressed {
+    background-color: @accent_color;
+}
+
+QLineEdit, QTextEdit {
+    background-color: @primary_color;
+    border: 1px solid @secondary_color;
+    padding: 5px;
+    border-radius: 3px;
+}

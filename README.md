@@ -383,6 +383,10 @@ AURA has been designed with security in mind:
 - **Encryption** - sensitive data is encrypted
 - **Audit** - all operations are logged
 
+### Virtualized Environment Recommendation
+
+For enhanced security, it is highly recommended to run the AURA desktop application in a virtualized or containerized environment (e.g., Docker, a virtual machine). This provides an additional layer of isolation and helps to mitigate the risk of unintended system-level changes by the AI agents.
+
 ### Reporting security vulnerabilities
 
 If you find a security vulnerability, please contact us at: <admin@rogueagent.dev>
